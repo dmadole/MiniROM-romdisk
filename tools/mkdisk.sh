@@ -74,6 +74,10 @@ addfile () {
     flags=1
     set - $1/... $2
 
+  elif [ -z "${1##./files/bin/*}" ]
+  then
+    flags=2
+
   elif [ -x $1 ]
   then
     flags=2
